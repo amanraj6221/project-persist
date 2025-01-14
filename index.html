@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Persist - Web Developer Hiring</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1s, transform 1s; }
+        .visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    
+    <header class="h-screen flex flex-col justify-center items-center text-center px-6">
+        <h1 class="text-5xl font-bold">Build The Best Website Ever Seen!</h1>
+        <p class="mt-4 text-lg max-w-2xl">Join us at Persist and help reimagine social media with Bloom. A scrolling experience like no other!</p>
+        <a href="#apply" class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold hover:bg-blue-700 transition">Apply Now</a>
+    </header>
+    
+    <section class="py-20 bg-gray-800 text-center fade-in">
+        <h2 class="text-4xl font-bold">Why Join Us?</h2>
+        <p class="mt-4 text-lg max-w-3xl mx-auto">We focus on excellence, creativity, and pushing boundaries in web development.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-6">
+            <div class="bg-gray-700 p-6 rounded-lg w-64">
+                <h3 class="text-2xl font-semibold">$2,000 Signing Bonus</h3>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg w-64">
+                <h3 class="text-2xl font-semibold">12 LPA Base Salary</h3>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg w-64">
+                <h3 class="text-2xl font-semibold">$10,000+ Future Bonuses</h3>
+            </div>
+        </div>
+    </section>
+    
+    <section id="apply" class="py-20 text-center fade-in">
+        <h2 class="text-4xl font-bold">Apply Now</h2>
+        <p class="mt-4 text-lg">Take the next step in your career. Let's build something extraordinary together.</p>
+        <form class="mt-6 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg text-black" required>
+            <input type="email" placeholder="Your Email" class="w-full p-3 mt-4 rounded-lg text-black" required>
+            <button class="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg text-lg font-semibold hover:bg-green-700 transition">Submit Application</button>
+        </form>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fadeInElements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.5 });
+            fadeInElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
